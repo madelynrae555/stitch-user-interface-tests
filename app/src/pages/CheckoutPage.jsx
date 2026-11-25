@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
 import { money, useCart } from '../context/CartContext'
 import { customer, menuSections, restaurant } from '../data/menu'
+import { assetUrl } from '../utils/assets'
 
 const paymentMethods = [
   { id: 'card', label: 'Card', icon: 'credit_card' },
@@ -196,7 +197,7 @@ export default function CheckoutPage() {
                   <div className="flex items-start gap-space-md">
                     <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container flex items-center justify-center">
                       {line.image ? (
-                        <img className="w-full h-full object-cover" src={line.image} alt={line.name} />
+                        <img className="w-full h-full object-cover" src={assetUrl(line.image)} alt={line.name} />
                       ) : (
                         <div className="w-full h-full bg-surface-container-high flex items-center justify-center">
                           <Icon name="local_cafe" className="text-primary text-[36px]" />

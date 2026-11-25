@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useCart, money } from '../context/CartContext'
+import { assetUrl } from '../utils/assets'
 import Icon from './Icon'
 import QuantityStepper from './QuantityStepper'
 import SizeSelector from './SizeSelector'
@@ -54,7 +55,7 @@ export default function MenuItemCard({ item, variant }) {
       <div className="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col md:flex-row gap-space-lg">
         <Badge item={item} />
         <div className="w-full md:w-48 h-44 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container relative">
-          <img className="w-full h-full object-cover" src={item.image} alt={item.name} />
+          <img className="w-full h-full object-cover" src={assetUrl(item.image)} alt={item.name} />
           {item.imageLabel && (
             <div className="absolute bottom-2 left-2 bg-surface-container-lowest/90 backdrop-blur-xs px-2 py-0.5 rounded text-[11px] font-bold text-primary font-label-sm">
               {item.imageLabel}
@@ -104,7 +105,7 @@ export default function MenuItemCard({ item, variant }) {
       <div className="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-space-md">
         <div className="space-y-space-sm">
           <div className="w-full h-36 rounded-lg overflow-hidden bg-surface-container relative">
-            <img className="w-full h-full object-cover" src={item.image} alt={item.name} />
+            <img className="w-full h-full object-cover" src={assetUrl(item.image)} alt={item.name} />
             {item.badge && (
               <span className={`absolute top-2 left-2 font-label-sm text-label-sm px-2 py-0.5 rounded font-bold ${badgeStyles[item.badgeStyle]}`}>
                 {item.badge}
@@ -149,7 +150,7 @@ export default function MenuItemCard({ item, variant }) {
     <div className="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-space-sm">
       <div className="space-y-space-xs">
         <div className="w-full h-28 rounded-lg overflow-hidden bg-surface-container relative">
-          <img className="w-full h-full object-cover" src={item.image} alt={item.name} />
+          <img className="w-full h-full object-cover" src={assetUrl(item.image)} alt={item.name} />
           {item.badge && (
             <span className={`absolute top-2 right-2 text-[10px] font-bold px-1.5 py-0.5 rounded ${badgeStyles[item.badgeStyle]}`}>
               {item.badge}

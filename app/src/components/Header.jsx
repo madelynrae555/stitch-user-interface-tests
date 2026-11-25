@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { customer, restaurant } from '../data/menu'
+import { assetUrl } from '../utils/assets'
 import Icon from './Icon'
 
 const navLinks = [
@@ -41,7 +42,7 @@ export default function Header({ step = 'menu' }) {
 
       <div className="h-20 w-full px-gutter-desktop flex items-center justify-between gap-space-lg">
         <Link to="/" className="flex items-center gap-space-md flex-shrink-0">
-          <img alt="Rae's Pizza Logo" className="h-8 w-auto object-contain" src="/images/raes-logo.svg" />
+          <img alt="Rae's Pizza Logo" className="h-8 w-auto object-contain" src={assetUrl('/images/raes-logo.svg')} />
           <div className="flex flex-col">
             <span className="font-headline-sm text-headline-sm text-primary tracking-tight font-bold leading-none">
               Rae's Pizza
